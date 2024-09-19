@@ -1,0 +1,36 @@
+{% extends "ws_base.html" %}
+{% include "ws_cart.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <h2>Sunscreens</h2>
+        <span class="octicon octicon-info" data-toggle="popover" title="Your task"
+            data-content="Add two sunscreens to your cart. First, select the least expensive sunscreen that is SPF-50. For your second sunscreen, select the least expensive sunscreen that is SPF-30.  Click on the cart when you are done."></span>
+    </div>
+    <div class="row justify-content-center top-space-50">
+        {% for sunscreen in sunscreens[:3] %}
+        {% for name, details in sunscreen.items() %}
+        <div class="text-center col-4">
+            <img src="{{ url_for('static', filename= 'img/sunscreens/' + details['img']) }}" class="top-space-10" width="150px" height="150px"></img>
+            <p class="font-weight-bold top-space-10">{{ name }}</p>
+            <p>Price: Rs. {{ details['price'] }}</p>
+            <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{details['price']|safe}})">Add</button>
+        </div>
+        {% endfor %}
+        <hr />
+        {% endfor %}
+    </div>
+    <div class="row justify-content-center top-space-50">
+        {% for sunscreen in sunscreens[3:6] %}
+        {% for name, details in sunscreen.items() %}
+        <div class="text-center col-4">
+            <img src="{{ url_for('static', filename= 'img/sunscreens/' + details['img']) }}" class="top-space-10" width="150px" height="150px"></img>
+            <p class="font-weight-bold top-space-10">{{ name }}</p>
+            <p>Price: {{ details['price'] }}</p>
+            <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{details['price']|safe}})">Add</button>
+        </div>
+        {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

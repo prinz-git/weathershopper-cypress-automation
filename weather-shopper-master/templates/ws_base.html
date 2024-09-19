@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38578610-11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-38578610-11');
+    </script>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>The best moisturizer!</title>
+    {% endif %}
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" rel="stylesheet">
+    <link href="/static/css/ws_style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% block content %} {% endblock %}
+
+    <div class="row justify-content-center top-space-50">
+        <p class="ws_copyright">&copy; <a
+                href="https://qxf2.com/?utm_source=footer&utm_medium=click&utm_campaign=Weather%20shopper">Qxf2
+                Services</a> 2018 -
+            <script>document.write(new Date().getFullYear())</script>
+        </p>
+    </div>
+    </div>
+
+    <!--START OF JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="/static/js/ws_common.js"></script>
+</body>
+
+</html>
